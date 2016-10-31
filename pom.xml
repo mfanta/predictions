@@ -7,17 +7,36 @@
             http://maven.apache.org/maven-v4_0_0.xsd
 ">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>cz.mfanta</groupId>
     <artifactId>predictions</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+
     <version>0.0.1-SNAPSHOT</version>
-    <name>predictions</name>
 
     <scm>
         <connection>scm:git:https://github.com/mfanta/predictions.git</connection>
         <tag>predictions-0.0.1</tag>
     </scm>
 
-    <properties/>
+    <modules>
+        <module>predictions-core</module>
+    </modules>
+
+    <properties>
+        <spring-boot-version>1.4.1.RELEASE</spring-boot-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
