@@ -26,6 +26,7 @@
 
     <properties>
         <spring-boot-version>1.4.1.RELEASE</spring-boot-version>
+        <start-class>cz.mfanta.predictions.init.PredictionsInit</start-class>
     </properties>
 
     <dependencyManagement>
@@ -48,6 +49,22 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-version}</version>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
