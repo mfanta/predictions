@@ -22,6 +22,7 @@
 
     <modules>
         <module>predictions-core</module>
+        <module>predictions-frontend</module>
     </modules>
 
     <properties>
