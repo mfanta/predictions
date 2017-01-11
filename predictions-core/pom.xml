@@ -10,7 +10,6 @@
 
     <artifactId>predictions-core</artifactId>
     <name>${project.artifactId}</name>
-    <packaging>jar</packaging>
 
     <parent>
         <groupId>cz.mfanta</groupId>
@@ -20,11 +19,40 @@
 
     <version>0.0.1-SNAPSHOT</version>
 
+    <properties>
+        <frontend-version>0.0.1-SNAPSHOT</frontend-version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>cz.mfanta</groupId>
+            <artifactId>predictions-frontend</artifactId>
+            <version>${frontend-version}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-version}</version>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
