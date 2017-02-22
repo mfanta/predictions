@@ -1,0 +1,18 @@
+{
+  "name": "predictions-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-loader": "^6.3.2",
+    "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
