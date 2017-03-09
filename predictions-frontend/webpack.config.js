@@ -1,9 +1,20 @@
+var webpack = require('webpack');
 var path = require('path');
 // var webpack = require('webpack');
 
 module.exports = {
 
-  entry: path.resolve(__dirname, 'src/main/javascript/components/main/main.jsx'),
+  entry: path.resolve(__dirname, 'src/main/javascript/root.jsx'),
+
+  plugins: [
+    // hot reload
+    new webpack.HotModuleReplacementPlugin()
+  ],
+
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.json', '.js', '.jsx']
+  },
 
   output: {
     path: path.resolve(__dirname, 'src/main/resources/static'),
