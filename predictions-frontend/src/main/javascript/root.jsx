@@ -5,7 +5,7 @@ let render = () => {
   const MainComponent = require('./components/main/main');
   const container = document.getElementById('react-root');
 
-  ReactDOM.render(<MainComponent/>, container);
+  ReactDOM.render(<MainComponent userName="Martin"/>, container);
 };
 
 render();
