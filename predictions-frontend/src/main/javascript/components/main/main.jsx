@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default class MainComponent extends React.Component {
-  static render() {
+  //noinspection JSMethodCanBeStatic
+  render() {
     return <div>Hello Martin!</div>;
   }
 }
