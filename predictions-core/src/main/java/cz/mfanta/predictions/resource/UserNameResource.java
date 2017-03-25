@@ -1,5 +1,6 @@
 package cz.mfanta.predictions.resource;
 
+import cz.mfanta.predictions.dto.UserName;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,7 @@ public class UserNameResource {
             value = "/username",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public String getUserName() {
-        return "Martin";
+    public UserName getUserName() {
+        return UserName.builder().userName("Martik").build();
     }
 }
