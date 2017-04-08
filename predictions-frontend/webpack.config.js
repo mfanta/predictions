@@ -5,10 +5,7 @@ module.exports = {
 
   entry: path.resolve(__dirname, 'src/main/javascript/root.jsx'),
 
-  plugins: [
-    // hot reload
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  devtool: "cheap-eval-source-map",
 
   resolve: {
     modules: ['node_modules'],
