@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const HelloNameContainer = require('./components/helloName/HelloNameContainer');
+import HelloNameContainer from './components/helloName/HelloNameContainer.jsx';
 
-let render = () => {
+const render = () => {
   const container = document.getElementById('react-root');
 
   ReactDOM.render(<HelloNameContainer/>, container);

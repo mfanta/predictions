@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class HelloNameComponent extends React.Component {
 
@@ -7,4 +8,6 @@ export default class HelloNameComponent extends React.Component {
   }
 }
 
-module.exports = HelloNameComponent;
+HelloNameComponent.propTypes = {
+  userName: PropTypes.string,
+};
