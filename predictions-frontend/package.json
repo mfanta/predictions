@@ -26,7 +26,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "jest": "^19.0.2",
-    "react-dom/test-utils": "^15.5.4",
     "react-test-renderer": "^15.5.4"
   },
   "scripts": {
