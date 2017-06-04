@@ -1,11 +1,8 @@
 package cz.mfanta.predictions.dto;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter @Setter @EqualsAndHashCode @Builder
+@Getter @Setter @EqualsAndHashCode @Builder @AllArgsConstructor
 public class UserName {
 
     private String userName;
