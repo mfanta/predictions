@@ -7,7 +7,7 @@ import cz.mfanta.predictions.init.PredictionsInit;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,18 +16,19 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpStatus.OK;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+        webEnvironment = RANDOM_PORT
 )
 @ContextConfiguration(classes = {PredictionsInit.class})
 @ActiveProfiles("test")
 public class UserNameResourceTest {
 
-    @Value("${local.server.port}")
-    protected int port;
+    @LocalServerPort
+    private int port;
 
     @Before
     public void setUp() {
