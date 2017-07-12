@@ -21,6 +21,7 @@
 
     <properties>
         <frontend-version>0.0.1-SNAPSHOT</frontend-version>
+        <pmd-version>3.8</pmd-version>
     </properties>
 
     <dependencies>
@@ -67,6 +68,19 @@
                     <execution>
                         <goals>
                             <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${pmd-version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                            <goal>cpd-check</goal>
                         </goals>
                     </execution>
                 </executions>
