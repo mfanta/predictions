@@ -36,6 +36,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>cz.mfanta</groupId>
             <artifactId>predictions-frontend</artifactId>
             <version>${frontend-version}</version>
