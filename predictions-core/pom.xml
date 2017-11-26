@@ -134,6 +134,7 @@
                                 <rule>
                                     <element>CLASS</element>
                                     <excludes>
+                                        <exclude>cz.mfanta.predictions.init.PredictionsInit</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>
