@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class PredictionsInitTest {
 
     @Test
-    public void mainDoesNotThrow() throws Exception {
-         PredictionsInit.main(new String[0]);
+    public void applicationDoesNotThrow() throws Exception {
     }
 }
