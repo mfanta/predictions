@@ -3,7 +3,7 @@ server:
 
 liquibase:
   default-schema: 'predictions'
-  change-log: 'classpath:/changelog-xxx.yml'
+  change-log: 'classpath:/changelog.yml'
 
 spring:
   datasource:
