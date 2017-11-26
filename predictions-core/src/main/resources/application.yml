@@ -1,2 +1,11 @@
 server:
   port: 8095
+
+liquibase:
+  default-schema: 'predictions'
+  change-log: 'classpath:/changelog-xxx.yml'
+
+spring:
+  datasource:
+    driver-class-name: 'org.postgresql.Driver'
+    url: 'jdbc:postgresql://localhost/predictions?user=predictions&password=1predictions2'
