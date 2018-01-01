@@ -5,13 +5,62 @@ databaseChangeLog:
       author: Martin Fanta
       description: Add Team table
       changes:
-        - createTable:
-            tableName: Team
-            columns:
-              - column:
-                  name: id
-                  type: int
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
+      - createTable:
+          tableName: Team
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+
+  - changeSet:
+      id: 2
+      author: Martin Fanta
+      description: Add Competition table
+      changes:
+      - createTable:
+          tableName: Competition
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+
+  - changeSet:
+      id: 3
+      author: Martin Fanta
+      description: Add Season table
+      changes:
+      - createTable:
+          tableName: Season
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: competitionId
+              type: int
+              constraints:
+                nullable: false
+                foreignKeyName: fk_season_competition
+                references: Competition(id)
+          - column:
+              name: startDate
+              type: date
+              constraints:
+                nullable: false
+          - column:
+              name: endDate
+              type: date
+              constraints:
+                nullable: false
