@@ -49,7 +49,7 @@ databaseChangeLog:
                 nullable: false
           - column:
               name: competitionId
-              type: int
+              type: bigint
               constraints:
                 nullable: false
                 foreignKeyName: fk_season_competition
@@ -64,3 +64,52 @@ databaseChangeLog:
               type: date
               constraints:
                 nullable: false
+
+  - changeSet:
+      id: 4
+      author: Martin Fanta
+      description: Add Fixture table
+      changes:
+      - createTable:
+          tableName: Fixture
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: dateAndTime
+              type: datetime
+              constraints:
+                nullable: false
+          - column:
+              name: homeTeamId
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_fixture_home_team
+                references: Team(id)
+          - column:
+              name: awayTeamId
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_fixture_away_team
+                references: Team(id)
+          - column:
+              name: competitionId
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_fixture_competition
+                references: Competition(id)
+          - column:
+              name: seasonId
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_fixture_season
+                references: Season(id)
