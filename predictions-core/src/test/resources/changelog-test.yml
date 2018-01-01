@@ -1,17 +1,4 @@
 databaseChangeLog:
 
-  - changeSet:
-      id: 1
-      author: Martin Fanta
-      description: Add Team table
-      changes:
-        - createTable:
-            tableName: Team
-            columns:
-              - column:
-                  name: id
-                  type: int
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
+  - include:
+      file: changelog.yml
