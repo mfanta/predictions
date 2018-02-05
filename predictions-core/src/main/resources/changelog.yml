@@ -113,3 +113,37 @@ databaseChangeLog:
                 nullable: false
                 foreignKeyName: fk_fixture_season
                 references: Season(id)
+
+  - changeSet:
+      id: 5
+      author: Martin Fanta
+      description: Add TeamName table
+      changes:
+      - createTable:
+          tableName: TeamName
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: teamId
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_team_name_team
+                references: Team(id)
+          - column:
+              name: name
+              type: VARCHAR(255)
+              constraints:
+                nullable: false
+          - column:
+              name: primary
+              type: boolean
+              constraints:
+                nullable: false
+                default: false
