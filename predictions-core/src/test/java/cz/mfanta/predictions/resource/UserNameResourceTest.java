@@ -7,8 +7,8 @@ import cz.mfanta.predictions.init.PredictionsInit;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -23,24 +23,20 @@ import static org.springframework.http.HttpStatus.OK;
 @SpringBootTest(
         webEnvironment = RANDOM_PORT
 )
-@ContextConfiguration(classes = {PredictionsInit.class})
+@ContextConfiguration(classes = PredictionsInit.class)
 @ActiveProfiles("test")
 public class UserNameResourceTest {
 
     @LocalServerPort
     private int port;
 
-    @Before
-    public void setUp() {
-        RestAssured.port = port;
-    }
-
     @Test
-    public void getUserNameTest() throws Exception {
+    public void getUserNameTest() {
         UserName expectedUserName = new UserName("Martik");
         String url = buildGetUserNameUrl();
         Response response = RestAssured
                 .given()
+                .port(port)
                 .when()
                 .get(url);
         UserName responseUserName = response.as(UserName.class);
