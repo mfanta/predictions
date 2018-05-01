@@ -135,6 +135,7 @@
                                     <element>CLASS</element>
                                     <excludes>
                                         <exclude>cz.mfanta.predictions.init.PredictionsInit</exclude>
+                                        <exclude>cz.mfanta.predictions.dto.*</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>
