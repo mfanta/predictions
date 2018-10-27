@@ -4,7 +4,6 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 import cz.mfanta.predictions.dto.UserName;
 import cz.mfanta.predictions.init.PredictionsInit;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
