@@ -13,8 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpStatus.OK;
 
@@ -44,7 +43,7 @@ public class UserNameResourceTest {
                 .then()
                 .statusCode(OK.value());
 
-        assertThat(responseUserName, is(expectedUserName));
+        assertThat(responseUserName).isEqualTo(expectedUserName);
     }
 
     private String buildGetUserNameUrl() {

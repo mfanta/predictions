@@ -7,9 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ResourceConfiguration.class)
@@ -20,7 +18,7 @@ public class ResourceConfigurationTest {
     private UserNameResource userNameResource;
 
     @Test
-    public void providesUserNameResource() throws Exception {
-        assertThat(userNameResource, not(nullValue()));
+    public void providesUserNameResource() {
+        assertThat(userNameResource).isNotNull();
     }
 }
