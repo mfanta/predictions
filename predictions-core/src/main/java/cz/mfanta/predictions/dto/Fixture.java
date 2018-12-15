@@ -1,11 +1,10 @@
 package cz.mfanta.predictions.dto;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Value;
 
 import java.time.Instant;
 
-@Getter @Builder
+@Value
 public class Fixture {
 
     private Instant dateAndTime;
