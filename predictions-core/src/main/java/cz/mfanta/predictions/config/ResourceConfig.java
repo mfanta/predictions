@@ -1,10 +1,11 @@
-package cz.mfanta.predictions.resource;
+package cz.mfanta.predictions.config;
 
+import cz.mfanta.predictions.resource.UserNameResource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ResourceConfiguration {
+public class ResourceConfig {
 
     @Bean
     public UserNameResource userNameResource() {

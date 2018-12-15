@@ -1,5 +1,6 @@
-package cz.mfanta.predictions.resource;
+package cz.mfanta.predictions.config;
 
+import cz.mfanta.predictions.resource.UserNameResource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = ResourceConfiguration.class)
+@ContextConfiguration(classes = ResourceConfig.class)
 @ActiveProfiles("test")
-public class ResourceConfigurationTest {
+public class ResourceConfigTest {
 
     @Autowired
     private UserNameResource userNameResource;
