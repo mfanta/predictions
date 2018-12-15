@@ -1,14 +1,18 @@
 package cz.mfanta.predictions.reader;
 
-import cz.mfanta.predictions.dto.Fixture;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import cz.mfanta.predictions.dto.Fixtures;
+import lombok.RequiredArgsConstructor;
 
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
+@RequiredArgsConstructor
 public class JsonFixtureReader {
 
-    public List<Fixture> readFixtures(InputStream inputStream) {
-        return new ArrayList<>();
+    private final ObjectMapper objectMapper;
+
+    public Fixtures readFixtures(InputStream inputStream) throws IOException {
+        return objectMapper.readValue(inputStream, Fixtures.class);
     }
 }
