@@ -1,5 +1,6 @@
 package cz.mfanta.predictions.init;
 
+import cz.mfanta.predictions.config.FixtureReaderConfig;
 import cz.mfanta.predictions.fe.configuration.FrontendControllerConfiguration;
 import cz.mfanta.predictions.config.ResourceConfig;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +11,8 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @Import({
         FrontendControllerConfiguration.class,
-        ResourceConfig.class
+        ResourceConfig.class,
+        FixtureReaderConfig.class
 })
 @EnableAutoConfiguration
 public class PredictionsInit {
