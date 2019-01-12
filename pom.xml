@@ -26,7 +26,8 @@
     </modules>
 
     <properties>
-        <spring-boot-version>2.0.6.RELEASE</spring-boot-version>
+        <spring.boot.version>2.0.6.RELEASE</spring.boot.version>
+        <jackson.version>2.9.8</jackson.version>
         <junit.jupiter.version>5.0.2</junit.jupiter.version>
         <assertj.version>3.11.1</assertj.version>
         <start-class>cz.mfanta.predictions.init.PredictionsInit</start-class>
@@ -39,19 +40,32 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-jdbc</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-modules-java8</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <!-- Lombok -->
@@ -106,7 +120,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring-boot-version}</version>
+                <version>${spring.boot.version}</version>
                 <scope>test</scope>
             </dependency>
 
