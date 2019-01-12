@@ -1,8 +1,9 @@
 package cz.mfanta.predictions.dto;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Value;
 
-@Getter @Builder
+@Value
 public class Team {
+
+    private final String name;
 }
